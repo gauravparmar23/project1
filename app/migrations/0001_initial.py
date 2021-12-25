@@ -12,10 +12,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Departments',
+            name='School',
             fields=[
-                ('DepartmentsId', models.AutoField(primary_key=True, serialize=False)),
-                ('DepartmentsItem', models.CharField(max_length=100)),
+                ('SchoolId', models.AutoField(primary_key=True, serialize=False)),
+                ('SchoolItem', models.CharField(max_length=100)),
             ],
         ),
     ]

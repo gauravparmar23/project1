@@ -4,15 +4,15 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
-from EmployeeApp.models import Departments
-from EmployeeApp.serializers import DepartmentSerializer
+from app.models import School
+from app.serializers import schoolSerializer
 
 @csrf_exempt
-def departmentApi(request,id=0):
+def schoolApi(request,id=0):
     if request.method == "POST":
-        department_data =JSONParser().parse(request)
-        departments_serializer=DepartmentSerializer(data=department_data)
-        if departments_serializer.is_valid():
-            departments_serializer.save()
+        School_data =JSONParser().parse(request)
+        School_serializer=schoolSerializer(data=School_data)
+        if School_serializer.is_valid():
+            School_serializer.save()
             return JsonResponse("Added Sucessfully",safe=False)
         return JsonResponse("failed to add",safe=False)
